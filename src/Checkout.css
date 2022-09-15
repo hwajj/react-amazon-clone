@@ -1,7 +1,7 @@
 .checkout {
   display: flex;
   padding: 20px;
-  background-color: white;
+  background-color: #f3f3f3;
   height: max-content; /*장바구니 아이템 개수만큼 커짐*/
 }
 
@@ -14,4 +14,16 @@
 .checkout_ad {
   width: 100%;
   margin-bottom: 10px;
+}
+
+.checkout_left {
+  background-color: #fff;
+}
+
+.checkout_list {
+  padding: 20px;
+}
+
+.checkout_right {
+  margin-left: 20px;
 }

@@ -21,8 +21,10 @@ function Home(props) {
           />
           <Product
             id='3'
-            title='Seagate Portable 2TB External Hard Drive Portable HDD'
-            price='110.2'
+            title='Sponsored Ad - Seagate Desktop 8TB External Hard Drive HDD – USB 3.0 for PC, Laptop And Mac, 1-Year Rescue Service (STGY80...
+                Sponsored 
+                Seagate Desktop 8TB External Hard Drive HDD – USB 3.0 for PC, Laptop And Mac, 1-Year Rescue Service (STGY8000400)'
+            price='180.2'
             image='https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/81tjLksKixL._AC_SX679_.jpg'
             rating={4}
           />

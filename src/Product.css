@@ -25,7 +25,10 @@
   border-color: #61dafb;
 }
 .product_title {
-  height: 240px;
+  height: 65px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
 }
 .product_price {
   display: flex;
