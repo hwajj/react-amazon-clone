@@ -4,17 +4,20 @@ import SearchIcon from '@mui/icons-material/Search';
 import { ShoppingBasket } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
+import { auth } from './firebase';
 
 function Header(props) {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ user, basket }, dispatch] = useStateValue();
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
+
   return (
     <div className='header'>
       <Link to='/'>
-        <img
-          className='header_logo'
-          src='https://pngimg.com/uploads/amazon/amazon_PNG25.png'
-          alt=''
-        />
+        <img className='header_logo' src='static/header_logo.png' alt='' />
       </Link>
       <div className='header_search'>
         <input type='text' className='header_searchInput' />
@@ -24,7 +27,14 @@ function Header(props) {
       <div className='header_nav'>
         <div className='header_option'>
           <span className='header_optionLineOne'>안녕하세요</span>
-          <span className='header_optionLineTwo'>로그인하세요</span>
+          <Link to={!user && '/login'} className='homelogin'>
+            <span
+              onClick={handleAuthentication}
+              className='header_optionLineTwo'
+            >
+              {user ? '로그아웃' : '로그인'}
+            </span>
+          </Link>
         </div>
         <div className='header_option'>
           <span className='header_optionLineOne'>돌아가기</span>
