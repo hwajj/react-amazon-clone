@@ -22,5 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
+src/stripe.js
 src/firebase.js
+.firebase
+.firebaserc
