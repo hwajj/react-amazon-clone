@@ -21,12 +21,12 @@ function Payment() {
 
   useEffect(() => {
     const getClientSecret = async () => {
-      const response = await axios({
+      const res = await axios({
         method: 'POST',
         url: `/payment/create?total=${getBasketTotal(basket) * 100}`,
       });
 
-      setClientSecret(response.data.clientSecret);
+      setClientSecret(res.data.clientSecret);
     };
     getClientSecret();
   }, [basket]);
@@ -48,6 +48,7 @@ function Payment() {
   };
 
   //카드번호 적을때마다 handleChange
+
   const handleChange = (event) => {
     setDisable(event.empty); //true if the value is empty.
     setError(event.error ? event.error.message : '');
