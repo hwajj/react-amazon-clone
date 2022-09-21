@@ -26,7 +26,9 @@ function Header(props) {
 
       <div className='header_nav'>
         <div className='header_option'>
-          <span className='header_optionLineOne'>안녕하세요</span>
+          <span className='header_optionLineOne'>
+            {!user ? '게스트' : user.email}
+          </span>
           <Link to={!user && '/login'} className='homelogin'>
             <span
               onClick={handleAuthentication}
@@ -38,7 +40,9 @@ function Header(props) {
         </div>
         <div className='header_option'>
           <span className='header_optionLineOne'>돌아가기</span>
-          <span className='header_optionLineTwo'>주문내역</span>
+          <Link to='/orders' className='orderlist'>
+            <span className='header_optionLineTwo'>주문내역</span>
+          </Link>
         </div>
         <div className='header_option'>
           <span className='header_optionLineOne'>반가워요</span>
