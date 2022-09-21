@@ -17,9 +17,7 @@ function Login(props) {
 
   const register = (e) => {
     e.preventDefault();
-    auth.createUserWithEmailAndPassword(email, password).then((auth) => {
-      console.log(auth);
-    });
+    auth.createUserWithEmailAndPassword(email, password).then((auth) => {});
   };
 
   return (
