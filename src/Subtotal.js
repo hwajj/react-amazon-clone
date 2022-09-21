@@ -15,7 +15,7 @@ function Subtotal(props) {
         renderText={(value) => (
           <>
             <p>
-              총액({basket.length} items) : <strong> ${value}</strong>
+              총액({basket.length} items) : <strong> {value}</strong>
             </p>
             <small className='subtotal_gift'>
               <input type='checkbox' />
@@ -27,7 +27,7 @@ function Subtotal(props) {
         value={getBasketTotal(basket)}
         displayType={'text'}
         thousandSeparator={true}
-        prefix={'₩'}
+        prefix={'$'}
       />
       <button onClick={() => navigate('/payment')}>결제하기</button>
     </div>

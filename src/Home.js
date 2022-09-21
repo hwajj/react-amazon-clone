@@ -40,7 +40,7 @@ function Home(props) {
           <Product
             id='5'
             title='Sceptre 24" Professional Thin 75Hz 1080p LED Monitor 2x HDMI VGA Build-in Speakers'
-            price='219'
+            price='219.0'
             image='https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/71rXSVqET9L._AC_UL640_QL65_.jpg'
             rating={5}
           />
