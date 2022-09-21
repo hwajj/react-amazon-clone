@@ -4,6 +4,7 @@ import Header from './Header';
 import Home from './Home';
 import Checkout from './Checkout';
 import Login from './Login';
+import Orders from './Orders';
 import { useEffect } from 'react';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
@@ -20,7 +21,6 @@ function App() {
     () =>
       //사용자 변화를 감지
       auth.onAuthStateChanged((authUser) => {
-        console.log(authUser);
         if (authUser) {
           dispatch({
             type: 'SET_USER',
@@ -74,6 +74,15 @@ function App() {
                 <Elements stripe={promise}>
                   <Payment />
                 </Elements>
+              </>
+            }
+          />
+          <Route
+            path='/orders'
+            element={
+              <>
+                <Header />
+                <Orders />
               </>
             }
           />

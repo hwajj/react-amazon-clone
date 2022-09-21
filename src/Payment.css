@@ -31,3 +31,26 @@
 .payment_details > form {
   max-width: 400px;
 }
+
+.payment_details > h3 {
+  padding-bottom: 200px;
+}
+
+.payment_details > form > button {
+  max-width: 400px;
+  background-color: #a5a5f3;
+  border-radius: 2px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
+  font-weight: bolder;
+  margin-top: 10px;
+  border-color: #a5a5f3 #8768bf #61dafb;
+  color: #111111;
+  cursor: pointer;
+}
+
+.payment_details > form > div > button:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
