@@ -20,6 +20,8 @@ function Login(props) {
     auth.createUserWithEmailAndPassword(email, password).then((auth) => {});
   };
 
+  const emailChangeHandler = (e) => setEmail(e.target.value);
+  const passwordChangeHandler = (e) => setPassword(e.target.value);
   return (
     <div className='login'>
       <Link to='/'>
@@ -30,16 +32,12 @@ function Login(props) {
         <h1>로그인</h1>
         <form action=''>
           <h5>이메일</h5>
-          <input
-            type='text'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <input type='text' value={email} onChange={emailChangeHandler} />
           <h5>비밀번호</h5>
           <input
             type='password'
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={passwordChangeHandler}
           />
           <button onClick={signIn} className='login_signInButton'>
             로그인하기
@@ -48,7 +46,11 @@ function Login(props) {
       </div>
       <div className='login_register'>
         <h4 className='login_registerAgree'> 이 사이트에 처음이시라면 </h4>
-        <button onClick={register} className='login_registerButton'>
+        <button
+          onClick={props.onShowJoin}
+          onRegister={register}
+          className='login_registerButton'
+        >
           회원가입
         </button>
       </div>
