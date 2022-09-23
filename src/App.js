@@ -54,7 +54,7 @@ function App() {
             path='/'
             element={
               <>
-                <Header />
+                <Header onHideJoin={hideJoinHandler} />
                 <Home />
               </>
             }

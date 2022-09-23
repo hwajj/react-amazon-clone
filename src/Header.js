@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Header.css';
 import SearchIcon from '@mui/icons-material/Search';
 import { ShoppingBasket } from '@mui/icons-material';
@@ -13,7 +13,7 @@ function Header(props) {
       auth.signOut();
     }
   };
-
+  useEffect(() => props.onHideJoin(), []);
   return (
     <div className='header'>
       <Link to='/'>
