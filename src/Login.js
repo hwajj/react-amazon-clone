@@ -15,10 +15,7 @@ function Login(props) {
       .then((auth) => navigate('/'));
   };
 
-  const register = (e) => {
-    e.preventDefault();
-    auth.createUserWithEmailAndPassword(email, password).then((auth) => {});
-  };
+
 
   const emailChangeHandler = (e) => setEmail(e.target.value);
   const passwordChangeHandler = (e) => setPassword(e.target.value);
@@ -48,7 +45,7 @@ function Login(props) {
         <h4 className='login_registerAgree'> 이 사이트에 처음이시라면 </h4>
         <button
           onClick={props.onShowJoin}
-          onRegister={register}
+
           className='login_registerButton'
         >
           회원가입

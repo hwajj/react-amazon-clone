@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Header';
@@ -23,9 +23,9 @@ function App() {
     setShowJoin(true);
   };
 
-  const hideJoinHandler = () => {
+  const hideJoinHandler = useCallback(() => {
     setShowJoin(false);
-  };
+  }, []);
 
   const [{}, dispatch] = useStateValue();
   useEffect(() => {

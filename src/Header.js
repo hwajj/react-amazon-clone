@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import './Header.css';
 import SearchIcon from '@mui/icons-material/Search';
 import { ShoppingBasket } from '@mui/icons-material';
