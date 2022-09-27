@@ -37,13 +37,29 @@ function Payment() {
     setProcessing(true); //결제중
     const payload = await stripe
       .confirmCardPayment(clientSecret, {
-        payload: 'POST',
-        card: elements.getElement(),
+        payment_method: {
+          card: elements.getElement(CardElement),
+        },
       })
       .then(({ paymentIntent }) => {
+        db.collection('users')
+          .doc(user?.uid)
+          .collection('orders')
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setSucceed(true);
         setError(null);
-        setProcessing('');
+        setProcessing(false);
+
+        dispatch({
+          type: 'EMPTY_BASKET',
+        });
+
         navigate('/orders');
       });
   };

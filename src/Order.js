@@ -3,6 +3,7 @@ import './Order.css';
 import moment from 'moment';
 import CheckoutProduct from './CheckoutProduct';
 import CurrencyFormat from 'react-currency-format';
+import { getBasketMap } from './Reducer';
 
 function Order({ order }) {
   return (
@@ -13,12 +14,13 @@ function Order({ order }) {
         <small>{order.id}</small>
       </p>
 
-      {order.data.basket?.map((item) => (
+      {getBasketMap(order.data.basket)?.map((item) => (
         <CheckoutProduct
           id={item.id}
           title={item.title}
           image={item.image}
           price={item.price}
+          amount={item.amount}
           hideButton
         />
       ))}
