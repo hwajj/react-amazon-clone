@@ -7,6 +7,20 @@ import { useStateValue } from './StateProvider';
 function Checkout(props) {
   const [{ user, basket }, dispatch] = useStateValue();
 
+  let basketMap = basket.reduce((array, item) => {
+    let x = array.find((e) => e.id == item.id);
+    if (!x) {
+      item['amount'] = 1;
+      array = array.concat(item);
+    } else {
+      x['amount']++;
+    }
+
+    return array;
+  }, []);
+
+  console.log(basketMap);
+
   return (
     <div className='checkout'>
       <div className='checkout_left'>
@@ -18,13 +32,14 @@ function Checkout(props) {
         <div>
           <h2 className='checkout_title'>{user?.email}의 장바구니입니다</h2>
           <div className='checkout_list'>
-            {basket.map((item) => (
+            {basketMap.map((item) => (
               <CheckoutProduct
                 id={item.id}
                 title={item.title}
                 image={item.image}
                 price={item.price}
                 rating={item.rating}
+                amount={item.amount}
               />
             ))}
           </div>

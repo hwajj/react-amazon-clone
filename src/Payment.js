@@ -5,7 +5,7 @@ import { useStateValue } from './StateProvider';
 import './Payment.css';
 import CheckoutProduct from './CheckoutProduct';
 import CurrencyFormat from 'react-currency-format';
-import { getBasketTotal } from './Reducer';
+import { getBasketTotal, getBasketMap } from './Reducer';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { db } from './firebase';
 
@@ -81,13 +81,15 @@ function Payment() {
           <h3>상품목록</h3>
         </div>
         <div className='payment_items'>
-          {basket.map((item) => (
+          {getBasketMap(basket).map((item) => (
             <CheckoutProduct
               id={item.id}
               title={item.title}
               image={item.image}
               price={item.price}
               rating={item.rating}
+              amount={item.amount}
+              hideButton
             />
           ))}
         </div>
