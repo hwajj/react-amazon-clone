@@ -11,13 +11,32 @@
   width: 556px;
 }
 
-.checkoutProduct_info > button {
-  background: #c1c0c0;
-  border: 1px solid;
-  border: none;
-  border-radius: 2px;
-  margin-top: 10px;
-  padding: 4px;
+.checkoutProduct_amount > button {
+  margin-left: 6px;
+  appearance: none;
+  background-color: #fafbfc;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 3px;
+  box-shadow: rgb(27 31 35 / 4%) 0 1px 0, rgb(255 255 255 / 25%) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 7px;
+  list-style: none;
+  padding: 4px 6px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
 }
 
 .checkoutProduct_image {
@@ -34,4 +53,15 @@
   height: 98px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.checkoutProduct_priceAmount {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.checkoutProduct_sum {
+  float: right;
 }
