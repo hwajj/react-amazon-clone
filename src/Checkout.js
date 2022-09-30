@@ -19,8 +19,6 @@ function Checkout(props) {
     return array;
   }, []);
 
-  console.log(basketMap);
-
   return (
     <div className='checkout'>
       <div className='checkout_left'>

@@ -30,6 +30,7 @@ function Payment() {
       setClientSecret(res.data.clientSecret);
     };
     getClientSecret();
+    console.log(clientSecret);
   }, [basket]);
 
   const handleSubmit = async (event) => {

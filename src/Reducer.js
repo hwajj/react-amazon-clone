@@ -57,7 +57,6 @@ const reducer = (state, action) => {
 
       if (addIdx >= 0) {
         addedBasket.push(state.basket[addIdx]);
-        console.log(addedBasket);
       } else {
         console.warn(`id ${action.id}가 장바구니에 존재하지 않습니다`);
       }
